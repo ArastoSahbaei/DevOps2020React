@@ -6,3 +6,7 @@
 .logotype {
 	width: 100px;
 }
+
+.signIn {
+	cursor: pointer;
+}
