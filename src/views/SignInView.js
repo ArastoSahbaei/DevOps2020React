@@ -1,9 +1,25 @@
-import React from 'react'
+import React, { useState, useContext } from 'react'
+import { UserContext } from '../shared/provider/UserProvider'
 
 export const SignInView = () => {
+	const [username, setUsername] = useState()
+	const [authenticatedUser, setAuthenticatedUser] = useContext(UserContext)
+
+	const login = (e) => {
+		e.preventDefault()
+		setAuthenticatedUser(username)
+	}
+
 	return (
 		<div>
-			<h1>This is where the users will be logging in</h1>
+			<form>
+				<span>Username: </span>
+				<input onChange={(event) => setUsername(event.target.value)} /> <br />
+				<span>Password: </span>
+				<input /> <br />
+				<button onClick={(e) => login(e)}>Login</button>
+			</form>
+
 		</div>
 	)
 }
