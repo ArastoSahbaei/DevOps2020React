@@ -1,5 +1,3 @@
-# RecipeApplication
-
  <hr>
 
  <h1 align="center"> :mag_right: Table of Content </h1>
