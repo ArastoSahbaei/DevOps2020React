@@ -5,6 +5,7 @@ import { SettingsView } from '../views/SettingsView'
 import { SignInView } from '../views/SignInView'
 import RoutingPath from './RoutingPath'
 import { UserContext } from '../shared/provider/UserProvider'
+import BrowserCache from '../shared/utils/BrowserCache'
 
 export const Routes = (props) => {
 	const [authenticatedUser, setAuthenticatedUser] = useContext(UserContext)
@@ -14,7 +15,7 @@ export const Routes = (props) => {
 	}
 
 	const checkIfUserIsAuthenticatedInBrowser = () => {
-		setAuthenticatedUser(localStorage.getItem('username'))
+		setAuthenticatedUser(localStorage.getItem(BrowserCache.username))
 	}
 
 	useEffect(() => {

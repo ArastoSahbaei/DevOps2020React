@@ -1,8 +1,9 @@
 import React, { useContext } from 'react'
 import { UserContext } from '../../shared/provider/UserProvider'
 import { useHistory } from 'react-router-dom'
-import './Profile.css'
 import RoutingPath from '../../routes/RoutingPath'
+import './Profile.css'
+import BrowserCache from '../../shared/utils/BrowserCache'
 
 export const Profile = () => {
 	const history = useHistory()
@@ -10,6 +11,7 @@ export const Profile = () => {
 
 	const logout = () => {
 		setAuthenticatedUser()
+		localStorage.removeItem(BrowserCache.username)
 		history.push(RoutingPath.HomeView)
 	}
 

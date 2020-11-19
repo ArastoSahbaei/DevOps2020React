@@ -2,6 +2,7 @@ import React, { useState, useContext } from 'react'
 import { UserContext } from '../shared/provider/UserProvider'
 import { useHistory } from 'react-router-dom'
 import RoutingPath from '../routes/RoutingPath'
+import BrowserCache from '../shared/utils/BrowserCache'
 
 export const SignInView = () => {
 	const history = useHistory()
@@ -11,7 +12,7 @@ export const SignInView = () => {
 	const login = (e) => {
 		e.preventDefault()
 		setAuthenticatedUser(username)
-		localStorage.setItem('username', username)
+		localStorage.setItem(BrowserCache.username, username)
 		history.push(RoutingPath.HomeView)
 	}
 
