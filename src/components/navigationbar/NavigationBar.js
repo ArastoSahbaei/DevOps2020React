@@ -16,7 +16,7 @@ export const NavigationBar = () => {
 				onClick={() => history.push(RoutingPath.HomeView)}
 				className="logotype"
 				src={Logotype}
-				alt={"Error..."} />
+				alt={'Error...'} />
 
 			<span
 				className="signIn"
