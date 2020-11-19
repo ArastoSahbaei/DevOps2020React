@@ -6,7 +6,12 @@ import RoutingPath from '../../routes/RoutingPath'
 
 export const Profile = () => {
 	const history = useHistory()
-	const [authenticatedUser,] = useContext(UserContext)
+	const [authenticatedUser, setAuthenticatedUser] = useContext(UserContext)
+
+	const logout = () => {
+		setAuthenticatedUser()
+		history.push(RoutingPath.HomeView)
+	}
 
 	return (
 		<div className="signIn">
@@ -17,7 +22,7 @@ export const Profile = () => {
 			<span>{authenticatedUser}</span>
 			<div className="profileDropDown">
 				<span onClick={() => history.push(RoutingPath.SettingsView)}>Settings</span>
-				<span>Logout</span>
+				<span onClick={() => logout()}>Logout</span>
 			</div>
 		</div>
 	)
