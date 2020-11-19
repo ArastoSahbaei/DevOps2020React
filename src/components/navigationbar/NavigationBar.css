@@ -12,7 +12,7 @@
 
 .signIn {
 	cursor: pointer;
-	grid-column: 9/11;
+	grid-column: 8/11;
 	justify-self: center;
 	align-self: center;
 }
