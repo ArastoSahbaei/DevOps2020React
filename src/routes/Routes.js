@@ -20,7 +20,7 @@ export const Routes = (props) => {
 
 	useEffect(() => {
 		checkIfUserIsAuthenticatedInBrowser()
-	})
+	}, [])
 
 	return (
 		<Router>
